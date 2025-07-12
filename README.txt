@@ -5,7 +5,7 @@ Welcome to my personal data analytics portfolio. This website showcases my work 
 ![Portfolio Screenshot](images/thumbs/01.jpg)
 
 ---
-
+---
 ## 🔍 About Me
 I am a data analyst passionate about uncovering trends and creating clear, actionable dashboards. My work ranges from automating workflows in Python to building robust Power BI and Excel solutions that drive informed decision-making.
 
