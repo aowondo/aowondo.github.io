@@ -81,30 +81,52 @@
             </div>
         </section>
         <!-- Two -->
-        <section id="two">
-            <h2>Sample Projects</h2>
-            <div class="row">
-                <article class="col-6 col-12-xsmall work-item">
-                    <a href="images/fulls/01.jpg" class="image fit thumb"><img src="images/thumbs/01.jpg" alt="Retail Dashboard" /></a>
-                    <h3>Retail Sales Performance Dashboard</h3>
-                    <p>Built a Power BI dashboard analyzing sales, customer segments, and profitability for a multi-store retailer, enabling data-driven stock and marketing decisions.</p>
-                </article>
-                <article class="col-6 col-12-xsmall work-item">
-                    <a href="images/fulls/02.jpg" class="image fit thumb"><img src="images/thumbs/02.jpg" alt="Healthcare Optimization" /></a>
-                    <h3>Patient Wait Time Optimization</h3>
-                    <p>Used Python and SQL to identify bottlenecks in clinic operations, reducing average patient wait times by 25% through actionable process improvements.</p>
-                </article>
-                <article class="col-6 col-12-xsmall work-item">
-                    <a href="images/fulls/03.jpg" class="image fit thumb"><img src="images/thumbs/03.jpg" alt="Education Analytics" /></a>
-                    <h3>Student Performance Insights</h3>
-                    <p>Analyzed academic data to uncover trends in student performance, building Excel dashboards that supported targeted interventions in an education institution.</p>
-                </article>
-                <article class="col-6 col-12-xsmall work-item">
-                    <a href="images/fulls/04.jpg" class="image fit thumb"><img src="images/thumbs/04.jpg" alt="Banking Risk Analysis" /></a>
-                    <h3>Bank Loan Risk Analysis</h3>
-                    <p>Created SQL-driven reports and Python visualizations to identify high-risk loan segments, improving portfolio risk monitoring for a banking client.</p>
-                </article>
-            </div>
+         <section id="two">
+    <h2>Sample Works</h2>
+    <div class="row">
+        <!-- Project 1 -->
+        <article class="col-6 col-12-xsmall work-item">
+            <a href="#project1-lightbox" class="glightbox">
+                <img src="images/thumbs/hospitality.jpg" alt="Hospitality Industry" />
+            </a>
+            <h3>Hospitality Revenue Dashboard</h3>
+            <p>Analyzing hotel booking & revenue data.</p>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="col-6 col-12-xsmall work-item">
+            <a href="#project2-lightbox" class="glightbox">
+                <img src="images/thumbs/retail.jpg" alt="Retail Industry" />
+            </a>
+            <h3>Retail Sales Performance</h3>
+            <p>Tracking sales and returns across branches.</p>
+        </article>
+    </div>
+
+    <!-- Hidden inline content for popups -->
+    <div id="project1-lightbox" class="glightbox-inline" style="display:none;">
+        <img src="images/fulls/hospitality-dashboard.jpg" alt="Hospitality Dashboard"   style="max-width:100%; margin-bottom:1rem;">
+        <h4>Hospitality Revenue Dashboard</h4>
+       <ul>
+            <li><strong>Project:</strong> Created a Power BI dashboard to monitor occupancy and revenue trends, helping management identify off-peak seasons.</li>
+        <li><strong>Tools:</strong> Power BI, SQL, Excel</li>
+        <li><strong>Key Takeaway:</strong> Revealed seasonality dips, prompting targeted marketing efforts that increased bookings by 20% in off-seasons.</li>
+        <br>
+        <a href="https://github.com/aowondo/hospitality-dashboard" class="button small" target="_blank">View on GitHub</a>
+        </ul>
+    </div>
+
+    <div id="project2-lightbox" class="glightbox-inline" style="display:none;">
+        <img src="images/fulls/retail-dashboard.jpg" alt="Retail Dashboard" style="max-width:100%; margin-bottom:1rem;">
+        <h4>Retail Sales Performance</h4>
+        <ul>
+        <li><strong>Project:</strong> Developed an interactive report to analyze product performance and branch profitability across a retail chain.</li>
+        <li><strong>Tools:</strong> Power BI, Power Query</li>
+        <li><strong>Key Takeaway:</strong> Identified underperforming SKUs and optimized inventory allocation, reducing dead stock by 35%.</li><br>
+        <a href="https://github.com/aowondo/retail-sales" class="button small" target="_blank">View on GitHub</a>
+    </ul>
+    </div>
+
             <ul class="actions">
                 <li><a href="resume/Resume_2025.pdf" class="button" target="_blank">View Resume</a></li>
             </ul>
@@ -162,10 +184,22 @@
 
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.poptrox.min.js"></script>
+    <!-- <script src="assets/js/jquery.poptrox.min.js"></script> -->
     <script src="assets/js/browser.min.js"></script>
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
+
+<script>
+const lightbox = GLightbox({
+    selector: '.glightbox',
+    width: 'auto',
+    height: 'auto',
+    zoomable: false
+});
+</script>
 </body>
 </html>
