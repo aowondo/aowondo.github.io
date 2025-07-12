@@ -2574,6 +2574,7 @@ input, select, textarea {
 /* Header */
 
 	#header {
+		margin-bottom:0;
 		padding-top:100;
 		display: -moz-flex;
 		display: -webkit-flex;
