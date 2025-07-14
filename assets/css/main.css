@@ -84,6 +84,7 @@ input, select, textarea {
 
 	body {
 		background-image: url(images/overlay.png), url(../../images/bg.jpg);
+		 background-repeat: no-repeat;
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
