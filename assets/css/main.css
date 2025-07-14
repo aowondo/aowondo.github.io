@@ -84,7 +84,12 @@ input, select, textarea {
 
 	body {
 		background-image: url(images/overlay.png), url(../../images/bg.jpg);
-		 background-repeat: no-repeat;
+		background-repeat: no-repeat;
+		background-size: cover;
+  		background-position: center;
+	 background-attachment: fixed;
+		overflow-y: auto;
+
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -2690,7 +2695,7 @@ input, select, textarea {
 		width: calc(100% - 35%);
 		padding-top: 30px;
 		background-color: #fff;
-
+       
 		border-radius: 25px; /* rounded corners */
  		box-shadow: 10px 0 10px rgba(0, 0, 0, 0.5),
                10px 0 10px rgba(0, 0, 0, 0.5); /* shadow left & right */
