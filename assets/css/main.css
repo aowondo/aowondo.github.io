@@ -3254,6 +3254,7 @@ input, select, textarea {
 .cert-item img {
   width: 150px;
   height: auto;
+  max-width: 150px;
 }
 
 .cert-item h3 {
