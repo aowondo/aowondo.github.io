@@ -2612,6 +2612,7 @@ input, select, textarea {
 		text-align: right;
 		top: 0;
 		width: 35%;
+		box-shadow: inset -20px 0 20px 5px rgba(0, 0, 0, 0.3);
 	}
 
 		#header > * {
@@ -2695,12 +2696,11 @@ input, select, textarea {
 		width: calc(100% - 35%);
 		padding-top: 30px;
 		background-color: #fff;
-       
 		border-radius: 25px; /* rounded corners */
- 		box-shadow: 10px 0 10px rgba(0, 0, 0, 0.5),
-               10px 0 10px rgba(0, 0, 0, 0.5); /* shadow left & right */
-  		padding: 2rem; /* optional: give space inside */
- 		background: white;  /*ensure contrast */
+		/*box-shadow:  0 0 20px rgba(0, 0, 0, 0.15), 10px 0 10px rgba(0, 0, 0, 0.5); /* shadow left & right */
+		box-shadow: 0 0 30px 20px rgba(0, 0, 0, 0.4);
+		padding: 2rem; /* optional: give space inside */
+		background: white;  /*ensure contrast */
 	}
 
 		#main > section {
