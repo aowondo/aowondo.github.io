@@ -2698,7 +2698,7 @@ input, select, textarea {
 		background-color: #fff;
 		border-radius: 25px; /* rounded corners */
 		/*box-shadow:  0 0 20px rgba(0, 0, 0, 0.15), 10px 0 10px rgba(0, 0, 0, 0.5); /* shadow left & right */
-		box-shadow: 0 0 30px 20px rgba(0, 0, 0, 0.4);
+		box-shadow: 0 0 6px 10px rgba(0, 0, 0, 0.6);
 		padding: 2rem; /* optional: give space inside */
 		background: white;  /*ensure contrast */
 	}
