@@ -3280,9 +3280,13 @@ input, select, textarea {
 				gap: 2.5rem; /* space between h3 and p */
 				
 				}
-				.col-13 {
+				.row > .col-13{
+					margin: 0 180px 0 258px;
 					margin-left: 25px;
 				}
+				/*.col-13 {
+					margin-left: 25px;
+				}*/
 				.divider {
 					display: block;
 					width: 35%;
@@ -3304,8 +3308,7 @@ input, select, textarea {
 
 		ul.labeled-icons li {
 			line-height: 1.75em;
-			margin: 0 0 0 -150px;
-			padding-left: 0;
+			margin: 0 auto 0 25px;
 			text-align:center;
 			
 		}
@@ -3314,7 +3317,7 @@ input, select, textarea {
 			ul.labeled-icons li h3 {
 				color: #b2b2b2;
 				position: static;
-				display:block;
+				display :block;
 				margin: 0 auto 0.5em auto;
 			}
 	}
