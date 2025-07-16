@@ -1412,13 +1412,16 @@ input, select, textarea {
 				}
 
 				.row > .col-12-small {
+					
 					width: 100%;
 				}
 
 				.row > .off-12-small {
 					margin-left: 100%;
 				}
-
+				.row > .col-13{
+					margin: 0 180px 0 258px;
+				}
 				.row.gtr-0 {
 					margin-top: 0;
 					margin-left: 0em;
@@ -1662,6 +1665,7 @@ input, select, textarea {
 
 				.row > .col-12-xsmall {
 					width: 100%;
+
 				}
 
 				.row > .off-12-xsmall {
@@ -2233,6 +2237,7 @@ input, select, textarea {
 			margin: 1.5em 0 0 0;
 			padding-left: 2.25em;
 			position: relative;
+			
 		}
 
 			ul.labeled-icons li:first-child {
@@ -3153,6 +3158,7 @@ input, select, textarea {
 
 			h2 {
 				font-size: 1.2em;
+				text-align: center;
 			}
 
 			h3 {
@@ -3184,12 +3190,18 @@ input, select, textarea {
 
 			#header {
 				padding: 2.25em 1.5em;
-			}
+				box-shadow:  inset 1px 0 16px 11px rgba(0, 0, 0, 0.3);
 
+			}
+			#pursuit{
+				text-align:center;
+			}
 				#header h1 {
 					font-size: 1.35em;
 				}
-
+			ul.actions li{
+				text-align: center;
+			}
 		/* Footer */
 
 			#footer {
@@ -3269,7 +3281,7 @@ input, select, textarea {
 				
 				}
 				.col-13 {
-					text-align: center;
+					margin-left: 25px;
 				}
 				.divider {
 					display: block;
@@ -3289,6 +3301,22 @@ input, select, textarea {
 				padding-left: 0;
 			}
 
+
+		ul.labeled-icons li {
+			line-height: 1.75em;
+			margin: 0 0 0 -140px;
+			padding-left: 0;
+			text-align:center;
+			
+		}
+
+			
+			ul.labeled-icons li h3 {
+				color: #b2b2b2;
+				position: static;
+				display:block;
+				margin: 0 auto 0.5em auto;
+			}
 	}
 	.certifications {
   text-align: left;
