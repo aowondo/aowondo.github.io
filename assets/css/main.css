@@ -383,6 +383,8 @@ input, select, textarea {
 
 		.row > .col-6 {
 			width: 50%;
+			/* margin-left: auto; */
+				text-align: center;
 		}
 
 		.row > .off-6 {
@@ -540,7 +542,9 @@ input, select, textarea {
 				}
 
 		@media screen and (max-width: 1800px) {
-
+.cert-list {
+	    padding-left:40px;
+}
 			.row {
 				display: flex;
 				flex-wrap: wrap;
@@ -733,11 +737,11 @@ input, select, textarea {
 
 				.row {
 					margin-top: 0;
-					margin-left: -2.5em;
+					margin-left: 0em;
 				}
 
 					.row > * {
-						padding: 0 0 0 2.5em;
+						padding: 0 0 0 0;
 					}
 
 					.row.gtr-uniform {
@@ -1516,11 +1520,15 @@ input, select, textarea {
 						.row.gtr-200.gtr-uniform > * {
 							padding-top: 3em;
 						}
-
+.one p{
+	text-align: center;
+}
 		}
 
 		@media screen and (max-width: 480px) {
-
+.one p{
+	text-align: center;
+}
 			.row {
 				display: flex;
 				flex-wrap: wrap;
@@ -3224,7 +3232,35 @@ input, select, textarea {
 				#header h1 br {
 					display: none;
 				}
-
+				#pursuit{
+				text-align: center;
+				}
+				#sub-headings{
+					text-align:center;
+				}
+				.words{
+					text-align: center;
+				}
+				section#one{
+					padding-top: 0px;
+				}
+				h2{
+				text-align: center;
+				}
+				.cert-list{
+					text-align: justify;
+					padding-left: 0px;
+				}
+				#datemov {
+					
+					padding-left: 10px;
+					
+				}
+				.cert-inline {
+				
+				gap: 1.5rem; /* space between h3 and p */
+				
+				}
 		/* Footer */
 
 			#footer .copyright li {
@@ -3242,6 +3278,7 @@ input, select, textarea {
 }
 
 .cert-list {
+	
   display: flex;
   flex-direction: column;
   gap: 2em;
@@ -3272,12 +3309,18 @@ input, select, textarea {
   margin: 0.3em 0 0;
   color: #555;
 }
-.cert-inline {
+/*.cert-inline {
   display: inline-flex;
   align-items: center;
-  gap: 0.75rem; /* space between h3 and p */
+  gap: 0.75rem; /* space between h3 and p *
+}*/
+.cert-inline {
+  display: inline-flex;
+  gap: 1.5rem; /* space between h3 and p */
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: justify;
 }
-
 .cert-inline h3,
 .cert-inline p {
   margin: 0;
