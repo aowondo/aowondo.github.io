@@ -3159,6 +3159,7 @@ input, select, textarea {
 				font-size: 1em;
 			}
 
+
 		/* Section/Article */
 
 			section.special, article.special {
@@ -3227,8 +3228,14 @@ input, select, textarea {
 
 			#header {
 				padding: 4.5em 1.5em;
+				box-shadow:  inset 1px 0 16px 11px rgba(0, 0, 0, 0.3);
 			}
-
+				#header h1{
+					text-align:center;	
+				}
+				#header ul{
+					padding-left:0;	
+				}
 				#header h1 br {
 					display: none;
 				}
@@ -3258,8 +3265,19 @@ input, select, textarea {
 				}
 				.cert-inline {
 				
-				gap: 1.5rem; /* space between h3 and p */
+				gap: 2.5rem; /* space between h3 and p */
 				
+				}
+				.col-13 {
+					text-align: center;
+				}
+				.divider {
+					display: block;
+					width: 35%;
+					height: 3px;          /* thickness */
+					background: #d39510;      /* color */
+					margin: 1.5em auto;   
+					text-align: center;  /* centers horizontally */
 				}
 		/* Footer */
 
@@ -3316,7 +3334,7 @@ input, select, textarea {
 }*/
 .cert-inline {
   display: inline-flex;
-  gap: 1.5rem; /* space between h3 and p */
+  gap: 2.5rem; /* space between h3 and p */
   flex-wrap: nowrap;
   flex-direction: row;
   justify-content: justify;
@@ -3332,6 +3350,14 @@ input, select, textarea {
 	margin-top:0;
         border-top: solid 0px #e5e5e500;
 }
+.divider {
+					display:block;
+					width: 35%;
+					height: 3px;          /* thickness */
+					background: #d39510;      /* color */
+					margin: 1.5em auto;   
+					text-align: center;  /* centers horizontally */
+				}
 /* Responsive */
 @media (max-width: 600px) {
   .cert-item {
