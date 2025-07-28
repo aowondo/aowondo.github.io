@@ -3401,15 +3401,15 @@ input, select, textarea {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   gap: 1rem;
-  max-width: 100%;
+  max-width: 600px;
   padding-bottom: 1rem;
 }
 
 .snap-item {
   flex: 0 0 auto;
   scroll-snap-align: start;
-  width: 100%;
-  max-width: 380px;
+  width: 600px;
+  max-width: 100%;
   height: auto;
   border-radius: 8px;
 }
