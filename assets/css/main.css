@@ -3298,6 +3298,9 @@ input, select, textarea {
 				img.portfolio-image{
 					max-width: 280px;
 				}
+				.snap-item {
+    				max-width: 280px;
+				}
 		/* Footer */
 
 			#footer .copyright li {
@@ -3393,6 +3396,23 @@ input, select, textarea {
 					text-align: center;  /* centers horizontally */
 				}
 /* Responsive */
+.scroll-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1rem;
+  max-width: 100%;
+  padding-bottom: 1rem;
+}
+
+.snap-item {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  border-radius: 8px;
+}
 @media (max-width: 600px) {
   .cert-item {
     flex-direction: column;
