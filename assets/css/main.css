@@ -3295,6 +3295,9 @@ input, select, textarea {
 					margin: 1.5em auto;   
 					text-align: center;  /* centers horizontally */
 				}
+				img.portfolio-image{
+					max-width: 280px;
+				}
 		/* Footer */
 
 			#footer .copyright li {
