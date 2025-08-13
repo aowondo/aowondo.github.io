@@ -3278,7 +3278,10 @@ input, select, textarea {
   align-items: center;
   gap: 0.75rem; /* space between h3 and p */
 }
-
+.portfolio-image{
+	max-width: 300px;
+	height: auto;
+}
 .cert-inline h3,
 .cert-inline p {
   margin: 0;
