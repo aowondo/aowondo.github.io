@@ -382,9 +382,8 @@ input, select, textarea {
 		}
 
 		.row > .col-6 {
-			width: 50%;
+			width: 45%;
 			/* margin-left: auto; */
-				text-align: center;
 		}
 
 		.row > .off-6 {
@@ -542,9 +541,7 @@ input, select, textarea {
 				}
 
 		@media screen and (max-width: 1800px) {
-.cert-list {
-	    padding-left:40px;
-}
+
 			.row {
 				display: flex;
 				flex-wrap: wrap;
@@ -737,7 +734,7 @@ input, select, textarea {
 
 				.row {
 					margin-top: 0;
-					margin-left: 0em;
+					margin-left: 1.5em;
 				}
 
 					.row > * {
@@ -1412,16 +1409,13 @@ input, select, textarea {
 				}
 
 				.row > .col-12-small {
-					
 					width: 100%;
 				}
 
 				.row > .off-12-small {
 					margin-left: 100%;
 				}
-				.row > .col-13{
-					margin: 0 180px 0 258px;
-				}
+
 				.row.gtr-0 {
 					margin-top: 0;
 					margin-left: 0em;
@@ -1523,15 +1517,11 @@ input, select, textarea {
 						.row.gtr-200.gtr-uniform > * {
 							padding-top: 3em;
 						}
-.one p{
-	text-align: center;
-}
+
 		}
 
 		@media screen and (max-width: 480px) {
-.one p{
-	text-align: center;
-}
+
 			.row {
 				display: flex;
 				flex-wrap: wrap;
@@ -1665,7 +1655,6 @@ input, select, textarea {
 
 				.row > .col-12-xsmall {
 					width: 100%;
-
 				}
 
 				.row > .off-12-xsmall {
@@ -2237,7 +2226,6 @@ input, select, textarea {
 			margin: 1.5em 0 0 0;
 			padding-left: 2.25em;
 			position: relative;
-			
 		}
 
 			ul.labeled-icons li:first-child {
@@ -3158,13 +3146,11 @@ input, select, textarea {
 
 			h2 {
 				font-size: 1.2em;
-				text-align: center;
 			}
 
 			h3 {
 				font-size: 1em;
 			}
-
 
 		/* Section/Article */
 
@@ -3190,18 +3176,12 @@ input, select, textarea {
 
 			#header {
 				padding: 2.25em 1.5em;
-				box-shadow:  inset 1px 0 16px 11px rgba(0, 0, 0, 0.3);
+			}
 
-			}
-			#pursuit{
-				text-align:center;
-			}
 				#header h1 {
 					font-size: 1.35em;
 				}
-			ul.actions li{
-				text-align: center;
-			}
+
 		/* Footer */
 
 			#footer {
@@ -3240,67 +3220,12 @@ input, select, textarea {
 
 			#header {
 				padding: 4.5em 1.5em;
-				box-shadow:  inset 1px 0 16px 11px rgba(0, 0, 0, 0.3);
 			}
-				#header h1{
-					text-align:center;	
-				}
-				#header ul{
-					padding-left:0;	
-				}
+
 				#header h1 br {
 					display: none;
 				}
-				#pursuit{
-				text-align: center;
-				}
-				#sub-headings{
-					text-align:center;
-				}
-				.words{
-					text-align: center;
-				}
-				section#one{
-					padding-top: 0px;
-				}
-				h2{
-				text-align: center;
-				}
-				.cert-list{
-					text-align: justify;
-					padding-left: 0px;
-				}
-				#datemov {
-					
-					padding-left: 10px;
-					
-				}
-				.cert-inline {
-				
-				gap: 2.5rem; /* space between h3 and p */
-				
-				}
-				.row > .col-13{
-					margin: 0 180px 0 258px;
-					margin-left: 25px;
-				}
-				/*.col-13 {
-					margin-left: 25px;
-				}*/
-				.divider {
-					display: block;
-					width: 35%;
-					height: 3px;          /* thickness */
-					background: #d39510;      /* color */
-					margin: 1.5em auto;   
-					text-align: center;  /* centers horizontally */
-				}
-				img.portfolio-image{
-					max-width: 280px;
-				}
-				.snap-item {
-    				max-width: 280px;
-				}
+
 		/* Footer */
 
 			#footer .copyright li {
@@ -3311,21 +3236,6 @@ input, select, textarea {
 				padding-left: 0;
 			}
 
-
-		ul.labeled-icons li {
-			line-height: 1.75em;
-			margin: 0 auto 0 25px;
-			text-align:center;
-			
-		}
-
-			
-			ul.labeled-icons li h3 {
-				color: #b2b2b2;
-				position: static;
-				display :block;
-				margin: 0 auto 0.5em auto;
-			}
 	}
 	.certifications {
   text-align: left;
@@ -3333,7 +3243,6 @@ input, select, textarea {
 }
 
 .cert-list {
-	
   display: flex;
   flex-direction: column;
   gap: 2em;
@@ -3364,18 +3273,12 @@ input, select, textarea {
   margin: 0.3em 0 0;
   color: #555;
 }
-/*.cert-inline {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem; /* space between h3 and p *
-}*/
 .cert-inline {
   display: inline-flex;
-  gap: 2.5rem; /* space between h3 and p */
-  flex-wrap: nowrap;
-  flex-direction: row;
-  justify-content: justify;
+  align-items: center;
+  gap: 0.75rem; /* space between h3 and p */
 }
+
 .cert-inline h3,
 .cert-inline p {
   margin: 0;
@@ -3387,32 +3290,7 @@ input, select, textarea {
 	margin-top:0;
         border-top: solid 0px #e5e5e500;
 }
-.divider {
-					display:block;
-					width: 35%;
-					height: 3px;          /* thickness */
-					background: #d39510;      /* color */
-					margin: 1.5em auto;   
-					text-align: center;  /* centers horizontally */
-				}
 /* Responsive */
-.scroll-container {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  gap: 1rem;
-  max-width: 600px;
-  padding-bottom: 1rem;
-}
-
-.snap-item {
-  flex: 0 0 auto;
-  scroll-snap-align: start;
-  width: 600px;
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
 @media (max-width: 600px) {
   .cert-item {
     flex-direction: column;
