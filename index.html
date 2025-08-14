@@ -183,12 +183,18 @@
                 </ul>
             </div>
             <div id="project2-lightbox" class="glightbox-inline" style="display:none;">
-              <div class="scroll-container">
-                <!--<img src="images/fulls/retail-dashboard.jpg" alt="Retail Dashboard" style="max-width:50%; margin-bottom:1rem;" class="snap-item">
-                <img src="images/fulls/retail-dashboard.jpg" alt="Retail Dashboard" style="max-width:50%; margin-bottom:1rem;" class="snap-item">-->
-                <img src="images/fulls/water-dashboard2.PNG" alt="water Dashboard2" style="max-width:100%; margin-bottom:1rem;" class="snap-item" >
-             <img src="images/fulls/water-dashboardfull.png" alt="water Dashboard1" style="max-width:100%; margin-bottom:1rem;" class="snap-item"> 
-            </div>
+              <div class="slider-wrapper">
+                <div class="scroll-container" id="carousel">
+                
+                  <img src="images/fulls/water-dashboard2.PNG" alt="water Dashboard2" style="max-width:100%; margin-bottom:1rem;" class="snap-item" >
+                  <img src="images/fulls/water-dashboardfull.png" alt="water Dashboard1" style="max-width:100%; margin-bottom:1rem;" class="snap-item">
+                
+              </div>
+              <button class="nav-arrow left" id="prevBtn">&#10094;</button>
+              <button class="nav-arrow right" id="nextBtn">&#10095;</button>
+              </div>
+
+           
                 
              
                 <h4>Building Water Consumption BI</h4>
@@ -294,6 +300,21 @@ const lightbox = GLightbox({
     width: 'auto',
     height: 'auto',
     zoomable: false
+});
+</script>
+<script>
+const container = document.getElementById('carousel');
+const nextBtn = document.getElementById('nextBtn');
+const prevBtn = document.getElementById('prevBtn');
+
+const imageWidth = container.clientWidth; // width of visible area
+
+nextBtn.addEventListener('click', () => {
+    container.scrollBy({ left: imageWidth, behavior: 'smooth' });
+});
+
+prevBtn.addEventListener('click', () => {
+    container.scrollBy({ left: -imageWidth, behavior: 'smooth' });
 });
 </script>
 </body>
