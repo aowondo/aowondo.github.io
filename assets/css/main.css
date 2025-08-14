@@ -3297,6 +3297,28 @@ input, select, textarea {
 	margin-top:0;
         border-top: solid 0px #e5e5e500;
 }
+.scroll-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; /* smooth momentum scroll on iOS */
+    gap: 1rem;
+    padding: 0.5rem;
+    scrollbar-width: none; /* Firefox - hide scrollbar */
+}
+
+.scroll-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+}
+
+.scroll-container img {
+    flex: 0 0 auto;
+    scroll-snap-align: center; /* snap to center of viewport */
+    border-radius: 5px;
+    max-width: 90%; /* prevent full-bleed oversize on small screens */
+    height: auto;
+}
+
 /* Responsive */
 @media (max-width: 600px) {
   .cert-item {
