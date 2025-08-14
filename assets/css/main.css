@@ -3304,24 +3304,54 @@ input, select, textarea {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch; /* smooth momentum scroll on iOS */
-    gap: 1rem;
-    padding: 0.5rem;
-    scrollbar-width: none; /* Firefox - hide scrollbar */
-	max-width:650px;
+    -webkit-overflow-scrolling: touch; /* smooth momentum scroll */
+    gap: 0; /* no gap so images fill the whole frame */
+    padding: 0;
+    scrollbar-width: none;
+    max-width: 650px;
+    margin: 0 auto;
 }
 
 .scroll-container::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Edge */
-
+    display: none;
 }
 
 .scroll-container img {
-    flex: 0 0 auto;
-    scroll-snap-align: center; /* snap to center of viewport */
-    border-radius: 5px;
-    max-width: 90%; /* prevent full-bleed oversize on small screens */
+    flex: 0 0 100%; /* each image takes full container width */
+    max-width: 100%;
     height: auto;
+    scroll-snap-align: start; /* snap at start of each image */
+    border-radius: 5px;
+}
+.slider-wrapper {
+    position: relative;
+    max-width: 600px;   /* container never bigger than image size */
+    margin: 0 auto;     /* center in lightbox */
+}
+.nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 2rem;
+    z-index: 10;
+    border-radius: 50%;
+}
+
+.nav-arrow.left {
+    left: 10px;
+}
+
+.nav-arrow.right {
+    right: 10px;
+}
+
+.nav-arrow:hover {
+    background: rgba(0, 0, 0, 0.8);
 }
 
 /* Responsive */
