@@ -169,7 +169,16 @@
 
             <!-- Hidden inline content for popups -->
             <div id="project1-lightbox" class="glightbox-inline" style="display:none;">
-                <img src="images/fulls/hospitality-dashboard.jpg" alt="Hospitality Dashboard"   style="max-width:100%; margin-bottom:1rem;">
+                    <div class="simple-carousel">
+                      <div class="carousel-images">
+                            <img src="images/fulls/retail-dashboard.jpg" alt="Retail Dashboard" class="active" style="max-width:100%; margin-bottom:1rem;">
+                            <img src="images/fulls/retail-dashboard.jpg" alt="Retail Dashboard" style="max-width:100%; margin-bottom:1rem; display:none;">
+                      </div>
+                      <div class="carousel-nav" style="text-align:center; margin-bottom:1rem;">
+                            <button class="carousel-btn active" data-index="0"></button>
+                            <button class="carousel-btn" data-index="1"></button>
+                      </div>
+                    </div>
                 <h4>Kenyan Migration & Tourism Analysis</h4>
             <ul>
                     <li><strong>Project:</strong> Created a Power BI dashboard to monitor occupancy and revenue trends, helping management identify off-peak seasons.</li>
@@ -183,17 +192,17 @@
                 </ul>
             </div>
             <div id="project2-lightbox" class="glightbox-inline" style="display:none;">
-              <div class="slider-wrapper">
-                <div class="scroll-container" id="carousel">
-                
-                  <img src="images/fulls/water-dashboard2.PNG" alt="water Dashboard2" style="max-width:100%; margin-bottom:1rem;" class="snap-item" >
-                  <img src="images/fulls/water-dashboardfull.png" alt="water Dashboard1" style="max-width:100%; margin-bottom:1rem;" class="snap-item">
-                
-              </div>
-              <button class="nav-arrow left" id="prevBtn">&#10094;</button>
-              <button class="nav-arrow right" id="nextBtn">&#10095;</button>
-              </div>
-
+                                
+                 <div class="simple-carousel">
+                      <div class="carousel-images">
+                            <img src="images/fulls/water-dashboard2.PNG" alt="water Dashboard2" class="active" style="max-width:100%; margin-bottom:1rem;">
+                            <img src="images/fulls/water-dashboardfull.png" alt="water Dashboard1" style="max-width:100%; margin-bottom:1rem; display:none;">
+                      </div>
+                      <div class="carousel-nav" style="text-align:center; margin-bottom:1rem;">
+                            <button class="carousel-btn active" data-index="0"></button>
+                            <button class="carousel-btn" data-index="1"></button>
+                      </div>
+                    </div>
            
                 
              
@@ -302,6 +311,58 @@ const lightbox = GLightbox({
     zoomable: false
 });
 </script>
+ <style>
+    /* Universal carousel styles for all project lightboxes */
+    .simple-carousel {
+        position: relative;
+    }
+    .carousel-images img {
+        transition: opacity 0.3s ease;
+        max-width: 100%;
+        margin-bottom: 1rem;
+    }
+    .carousel-images img:not(.active) {
+        display: none;
+    }
+    .carousel-nav {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    .carousel-btn {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border: 1px solid #ccc;
+        background: transparent;
+        margin: 0 4px;
+        padding: 0;
+        cursor: pointer;
+    }
+    .carousel-btn.active {
+        background: #333;
+    }
+</style>
+    
+  <!--  <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('.carousel-btn');
+            const images = document.querySelectorAll('.carousel-images img');
+            
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const index = this.getAttribute('data-index');
+                    
+                    // Update images
+                    images.forEach(img => img.style.display = 'none');
+                    images[index].style.display = 'block';
+                    
+                    // Update buttons
+                    buttons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
 <script>
 const container = document.getElementById('carousel');
 const nextBtn = document.getElementById('nextBtn');
@@ -316,6 +377,70 @@ nextBtn.addEventListener('click', () => {
 prevBtn.addEventListener('click', () => {
     container.scrollBy({ left: -imageWidth, behavior: 'smooth' });
 });
+</script>-->
+<script>
+    // Universal carousel initialization for all project lightboxes
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize when lightbox opens (for GLightbox)
+        if (typeof GLightbox !== 'undefined') {
+            document.addEventListener('glightbox:open', function(e) {
+                const lightboxId = e.detail.id;
+                if (lightboxId && lightboxId.startsWith('project') && lightboxId.endsWith('-lightbox')) {
+                    initCarousel(lightboxId);
+                }
+            });
+        }
+        
+        // Fallback initialization for non-GLightbox implementations
+        const projectLightboxes = document.querySelectorAll('[id^="project"][id$="-lightbox"]');
+        projectLightboxes.forEach(lightbox => {
+            // Watch for style changes to detect when lightbox becomes visible
+            const observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.attributeName === 'style') {
+                        if (lightbox.style.display !== 'none') {
+                            initCarousel(lightbox.id);
+                        }
+                    }
+                });
+            });
+            observer.observe(lightbox, { attributes: true });
+        });
+        
+        // Initialize any visible carousels on page load
+        document.querySelectorAll('[id^="project"][id$="-lightbox"]:not([style*="display: none"])').forEach(lightbox => {
+            initCarousel(lightbox.id);
+        });
+    });
+    
+    function initCarousel(lightboxId) {
+        const lightbox = document.getElementById(lightboxId);
+        if (!lightbox) return;
+        
+        const carousel = lightbox.querySelector('.simple-carousel');
+        if (!carousel) return;
+        
+        const buttons = carousel.querySelectorAll('.carousel-btn');
+        const images = carousel.querySelectorAll('.carousel-images img');
+        
+        // Only initialize if not already initialized
+        if (carousel.dataset.initialized) return;
+        carousel.dataset.initialized = 'true';
+        
+        buttons.forEach(button => {
+            button.addEventListener('click', function() {
+                const index = this.getAttribute('data-index');
+                
+                // Update images
+                images.forEach(img => img.classList.remove('active'));
+                images[index].classList.add('active');
+                
+                // Update buttons
+                buttons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    }
 </script>
 </body>
 </html>
