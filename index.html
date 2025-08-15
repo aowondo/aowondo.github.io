@@ -36,10 +36,10 @@
                     <li><strong>Data Analyst</strong></li>
                 </ul>
                 <ul>
-			        <li>Data Analysis & Visualization</li>
+                    <li>Data Analysis & Visualization</li>
                     <li>Business Intelligence & Reporting</li>
                     <li>Project Management </li>
-			    </ul><br />
+                </ul><br />
                 <ul>
                     <li>Uncovering insights using:</li>   
                     <li>Power BI, Python, SQL, Excel</li>                                   
@@ -170,15 +170,19 @@
             <!-- Hidden inline content for popups -->
             <div id="project1-lightbox" class="glightbox-inline" style="display:none;">
                     <div class="simple-carousel">
-                      <div class="carousel-images">
-                            <img src="images/fulls/retail-dashboard.jpg" alt="Retail Dashboard" class="active" style="max-width:100%; margin-bottom:1rem;">
-                            <img src="images/fulls/retail-dashboard.jpg" alt="Retail Dashboard" style="max-width:100%; margin-bottom:1rem; display:none;">
-                      </div>
-                      <div class="carousel-nav" style="text-align:center; margin-bottom:1rem;">
-                            <button class="carousel-btn active" data-index="0"></button>
-                            <button class="carousel-btn" data-index="1"></button>
-                      </div>
-                    </div>
+  <div class="carousel-images-wrapper">
+    <button class="carousel-arrow carousel-arrow-left" aria-label="Previous image">&#8592;</button>
+    <div class="carousel-images">
+      <img src="images/fulls/retail-dashboard.jpg" alt="Retail Dashboard" class="active" style="max-width:100%; margin-bottom:1rem;">
+      <img src="images/fulls/retail-dashboard.jpg" alt="Retail Dashboard" style="max-width:100%; margin-bottom:1rem; display:none;">
+    </div>
+    <button class="carousel-arrow carousel-arrow-right" aria-label="Next image">&#8594;</button>
+  </div>
+  <div class="carousel-nav" style="text-align:center; margin-bottom:1rem;">
+    <button class="carousel-btn active" data-index="0"></button>
+    <button class="carousel-btn" data-index="1"></button>
+  </div>
+</div>
                 <h4>Kenyan Migration & Tourism Analysis</h4>
             <ul>
                     <li><strong>Project:</strong> Created a Power BI dashboard to monitor occupancy and revenue trends, helping management identify off-peak seasons.</li>
@@ -192,18 +196,22 @@
                 </ul>
             </div>
             <div id="project2-lightbox" class="glightbox-inline" style="display:none;">
-                  <!--        
+                          
                  <div class="simple-carousel">
-                      <div class="carousel-images">
-                            <img src="images/fulls/water-dashboard2.PNG" alt="water Dashboard2" class="active" style="max-width:100%; margin-bottom:1rem;">
-                            <img src="images/fulls/water-dashboardfull.png" alt="water Dashboard1" style="max-width:100%; margin-bottom:1rem; display:none;">
-                      </div>
-                      <div class="carousel-nav" style="text-align:center; margin-bottom:1rem;">
-                            <button class="carousel-btn active" data-index="0"></button>
-                            <button class="carousel-btn" data-index="1"></button>
-                      </div>
-                    </div>
-                -->
+  <div class="carousel-images-wrapper">
+    <button class="carousel-arrow carousel-arrow-left" aria-label="Previous image">&#8592;</button>
+    <div class="carousel-images">
+      <img src="images/fulls/water-dashboard2.PNG" alt="water Dashboard2" class="active" style="max-width:100%; margin-bottom:1rem;">
+      <img src="images/fulls/water-dashboardfull.png" alt="water Dashboard1" style="max-width:100%; margin-bottom:1rem; display:none;">
+    </div>
+    <button class="carousel-arrow carousel-arrow-right" aria-label="Next image">&#8594;</button>
+  </div>
+  <div class="carousel-nav" style="text-align:center; margin-bottom:1rem;">
+    <button class="carousel-btn active" data-index="0"></button>
+    <button class="carousel-btn" data-index="1"></button>
+  </div>
+</div>
+                
                 <img src="images/fulls/water-dashboard2.PNG" alt="water Dashboard2"  style="max-width:50%; margin-bottom:1rem;">
                             <img src="images/fulls/water-dashboardfull.png" alt="water Dashboard1" style="max-width:50%; margin-bottom:1rem; ">
              
@@ -342,43 +350,43 @@ const lightbox = GLightbox({
     .carousel-btn.active {
         background: #333;
     }
+    .carousel-images-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+    .carousel-arrow {
+        background: rgba(255,255,255,0.8);
+        border: 1px solid #ccc;
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        font-size: 1.5rem;
+        color: #333;
+        cursor: pointer;
+        z-index: 2;
+        margin: 0 8px;
+        transition: background 0.2s;
+    }
+    .carousel-arrow:hover {
+        background: #eee;
+    }
+    .carousel-arrow-left {
+        order: 0;
+    }
+    .carousel-images {
+        order: 1;
+        flex: 1 1 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .carousel-arrow-right {
+        order: 2;
+    }
 </style>
-    
-  <!--  <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const buttons = document.querySelectorAll('.carousel-btn');
-            const images = document.querySelectorAll('.carousel-images img');
-            
-            buttons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const index = this.getAttribute('data-index');
-                    
-                    // Update images
-                    images.forEach(img => img.style.display = 'none');
-                    images[index].style.display = 'block';
-                    
-                    // Update buttons
-                    buttons.forEach(btn => btn.classList.remove('active'));
-                    this.classList.add('active');
-                });
-            });
-        });
-    </script>
-<script>
-const container = document.getElementById('carousel');
-const nextBtn = document.getElementById('nextBtn');
-const prevBtn = document.getElementById('prevBtn');
 
-const imageWidth = container.clientWidth; // width of visible area
-
-nextBtn.addEventListener('click', () => {
-    container.scrollBy({ left: imageWidth, behavior: 'smooth' });
-});
-
-prevBtn.addEventListener('click', () => {
-    container.scrollBy({ left: -imageWidth, behavior: 'smooth' });
-});
-</script>-->
 <script>
     // Universal carousel initialization for all project lightboxes
     document.addEventListener('DOMContentLoaded', function() {
@@ -387,6 +395,7 @@ prevBtn.addEventListener('click', () => {
             document.addEventListener('glightbox:open', function(e) {
                 const lightboxId = e.detail.id;
                 if (lightboxId && lightboxId.startsWith('project') && lightboxId.endsWith('-lightbox')) {
+                    resetCarousel(lightboxId);
                     initCarousel(lightboxId);
                 }
             });
@@ -400,6 +409,7 @@ prevBtn.addEventListener('click', () => {
                 mutations.forEach(function(mutation) {
                     if (mutation.attributeName === 'style') {
                         if (lightbox.style.display !== 'none') {
+                            resetCarousel(lightbox.id);
                             initCarousel(lightbox.id);
                         }
                     }
@@ -410,9 +420,50 @@ prevBtn.addEventListener('click', () => {
         
         // Initialize any visible carousels on page load
         document.querySelectorAll('[id^="project"][id$="-lightbox"]:not([style*="display: none"])').forEach(lightbox => {
+            resetCarousel(lightbox.id);
             initCarousel(lightbox.id);
         });
     });
+
+    // Remove previous event listeners and reset carousel state
+    function resetCarousel(lightboxId) {
+        const lightbox = document.getElementById(lightboxId);
+        if (!lightbox) return;
+        const carousel = lightbox.querySelector('.simple-carousel');
+        if (!carousel) return;
+        // Remove data-initialized so we can re-init
+        delete carousel.dataset.initialized;
+        // Reset images and buttons to initial state
+        const buttons = carousel.querySelectorAll('.carousel-btn');
+        const images = carousel.querySelectorAll('.carousel-images img');
+        images.forEach((img, i) => {
+            if (i === 0) {
+                img.classList.add('active');
+                img.style.display = '';
+            } else {
+                img.classList.remove('active');
+                img.style.display = 'none';
+            }
+        });
+        buttons.forEach((btn, i) => {
+            if (i === 0) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+            // Remove all previous click listeners by cloning
+            const newBtn = btn.cloneNode(true);
+            btn.parentNode.replaceChild(newBtn, btn);
+        });
+        // Remove arrow listeners by cloning
+        ['carousel-arrow-left', 'carousel-arrow-right'].forEach(cls => {
+            const arrow = carousel.querySelector('.' + cls);
+            if (arrow) {
+                const newArrow = arrow.cloneNode(true);
+                arrow.parentNode.replaceChild(newArrow, arrow);
+            }
+        });
+    }
     
     function initCarousel(lightboxId) {
         const lightbox = document.getElementById(lightboxId);
@@ -423,24 +474,51 @@ prevBtn.addEventListener('click', () => {
         
         const buttons = carousel.querySelectorAll('.carousel-btn');
         const images = carousel.querySelectorAll('.carousel-images img');
+        const leftArrow = carousel.querySelector('.carousel-arrow-left');
+        const rightArrow = carousel.querySelector('.carousel-arrow-right');
         
         // Only initialize if not already initialized
         if (carousel.dataset.initialized) return;
         carousel.dataset.initialized = 'true';
         
+        function showImage(index) {
+            images.forEach((img, i) => {
+                if (i === index) {
+                    img.classList.add('active');
+                    img.style.display = '';
+                } else {
+                    img.classList.remove('active');
+                    img.style.display = 'none';
+                }
+            });
+            buttons.forEach((btn, i) => {
+                if (i === index) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        }
+        
         buttons.forEach(button => {
             button.addEventListener('click', function() {
-                const index = this.getAttribute('data-index');
-                
-                // Update images
-                images.forEach(img => img.classList.remove('active'));
-                images[index].classList.add('active');
-                
-                // Update buttons
-                buttons.forEach(btn => btn.classList.remove('active'));
-                this.classList.add('active');
+                const index = Number(this.getAttribute('data-index'));
+                showImage(index);
             });
         });
+        
+        if (leftArrow && rightArrow) {
+            leftArrow.addEventListener('click', function() {
+                let current = Array.from(images).findIndex(img => img.classList.contains('active'));
+                let prev = (current - 1 + images.length) % images.length;
+                showImage(prev);
+            });
+            rightArrow.addEventListener('click', function() {
+                let current = Array.from(images).findIndex(img => img.classList.contains('active'));
+                let next = (current + 1) % images.length;
+                showImage(next);
+            });
+        }
     }
 </script>
 </body>
