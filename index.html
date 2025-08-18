@@ -319,6 +319,81 @@ const lightbox = GLightbox({
     height: 'auto',
     zoomable: false
 });
+
+// Helper to initialize carousel in the visible GLightbox popup
+function initVisibleCarousel() {
+    // Find the visible GLightbox inline content
+    const popup = document.querySelector('.glightbox-inline-content:not([style*="display: none"])');
+    if (!popup) return;
+    const carousel = popup.querySelector('.simple-carousel');
+    if (!carousel) return;
+
+    // Prevent double-initialization
+    if (carousel.dataset.initialized) return;
+    carousel.dataset.initialized = 'true';
+
+    const buttons = carousel.querySelectorAll('.carousel-btn');
+    const images = carousel.querySelectorAll('.carousel-images img');
+    const leftArrow = carousel.querySelector('.carousel-arrow-left');
+    const rightArrow = carousel.querySelector('.carousel-arrow-right');
+
+    function showImage(index) {
+        images.forEach((img, i) => {
+            img.classList.toggle('active', i === index);
+            img.style.display = i === index ? '' : 'none';
+        });
+        buttons.forEach((btn, i) => {
+            btn.classList.toggle('active', i === index);
+        });
+    }
+
+    // Remove previous listeners by cloning (prevents stacking)
+    buttons.forEach((btn, i) => {
+        const newBtn = btn.cloneNode(true);
+        btn.parentNode.replaceChild(newBtn, btn);
+    });
+    if (leftArrow) {
+        const newLeft = leftArrow.cloneNode(true);
+        leftArrow.parentNode.replaceChild(newLeft, leftArrow);
+    }
+    if (rightArrow) {
+        const newRight = rightArrow.cloneNode(true);
+        rightArrow.parentNode.replaceChild(newRight, rightArrow);
+    }
+
+    // Re-select after cloning
+    const newButtons = carousel.querySelectorAll('.carousel-btn');
+    const newLeftArrow = carousel.querySelector('.carousel-arrow-left');
+    const newRightArrow = carousel.querySelector('.carousel-arrow-right');
+
+    newButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const index = Number(this.getAttribute('data-index'));
+            showImage(index);
+        });
+    });
+
+    if (newLeftArrow && newRightArrow) {
+        newLeftArrow.addEventListener('click', function() {
+            let current = Array.from(images).findIndex(img => img.classList.contains('active'));
+            let prev = (current - 1 + images.length) % images.length;
+            showImage(prev);
+        });
+        newRightArrow.addEventListener('click', function() {
+            let current = Array.from(images).findIndex(img => img.classList.contains('active'));
+            let next = (current + 1) % images.length;
+            showImage(next);
+        });
+    }
+
+    // Always show first image on open
+    showImage(0);
+}
+
+// Listen for GLightbox open event and initialize carousel
+document.addEventListener('glightbox:open', function() {
+    setTimeout(initVisibleCarousel, 50); // Wait for DOM to update
+});
 </script>
  <style>
     /* Universal carousel styles for all project lightboxes */
